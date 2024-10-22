@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Update Ingredient</h2>
+    <form action="" method="post">
+    <div>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+    </div>
+    </form>
+     
+
+{% endblock %}

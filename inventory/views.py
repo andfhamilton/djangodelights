@@ -3,7 +3,7 @@ from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Ingredient, MenuItem, RecipeRequirement, Purchase
 from django.db.models import Sum, F
-
+from .forms import IngredientForm, MenuItemForm, RecipeRequirementForm
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -19,12 +19,12 @@ class HomeView(TemplateView):
 class NewIngredientView(CreateView):
     model = Ingredient
     template_name = "inventory/add_ingredient.html"
-#  form_class = IngredientForm
+    form_class = IngredientForm
 
 class UpdateIngredientView(UpdateView):
     model = Ingredient
     template_name = "inventory/update_ingredient.html"
-#  form_class = IngredientForm
+    form_class = IngredientForm
 
 class IngredientsView(ListView):
     model = Ingredient
@@ -33,7 +33,7 @@ class IngredientsView(ListView):
 class DeleteIngredientView(DeleteView):
     model = Ingredient
     template_name = "inventory/delete_ingredient.html"
-    success_url = "inventory/"
+    success_url = "/ingredients"
 
 class MenuItemsView(ListView):
     model = MenuItem
@@ -42,12 +42,12 @@ class MenuItemsView(ListView):
 class NewMenuItem(CreateView):
     model = MenuItem
     template_name = "inventory/new_menu_item.html"
-    # form_class = MenuItemForm
+    form_class = MenuItemForm
 
 class NewRecipeRequirementView(CreateView):
     template_name = "inventory/add_recipe_requirement.html"
     model = RecipeRequirement
-    #form_class = RecipeRequirementForm
+    form_class = RecipeRequirementForm
 
 class PurchasesView(ListView):
     model = Purchase

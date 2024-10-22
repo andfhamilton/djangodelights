@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delights Inventory{% endblock %}
+{% block content %}
+
+
+<h2>Ingredients</h2>
+<a href="{% url 'add_ingredient' %}">Add New Ingredient</a>
+<hr/>
+<table class="inventory-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Unit Price</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for ingredient in object_list %}
+        <tr>
+            <td>
+                <a href="{% url "update_ingredient" ingredient.id %}">{{ ingredient.name }}</a>
+            </td>
+            <td>{{ ingredient.quantity }}</td>
+            <td>{{ ingredient.unit }}</td>
+            <td class="price">${{ ingredient.unit_price|stringformat:".2f" }}</td>
+            <td><a href="{% url "delete_ingredient" ingredient.id %}" style="text-decoration: none; color: inherit;">❌</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    
+{% endblock %}
