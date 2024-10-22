@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Delights Inventory{% endblock %}
+
+{% block content %}
+
+<div class="home">
+    <div>
+        <h2>Ingredients</h2>
+        <table class="line-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Unit Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ingredient in ingredients %}
+                <tr>
+                    <td> {{ingredient.name}}</td>
+                    <td>
+                        <ul>
+                           
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div>
+        <h2>Purchases</h2>
+    </div>
+    <div>
+        <h2>Menu</h2>
+    </div>
+
+</div>
+{% endblock %}

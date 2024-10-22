@@ -15,6 +15,9 @@ class MenuItem(models.Model):
     title = models.CharField(max_length=200)
     price = models.FloatField(default=0)
 
+    def available(self):
+        return all(X.enough() for X in self.reciperequirement_set.all())
+
     def __str__(self):
         return f""" title={self.title}; price={self.price} """
 
