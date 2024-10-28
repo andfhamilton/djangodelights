@@ -1,10 +1,8 @@
 body {
-    font-family: "Oxygen", sans-serif;
-    margin: 0;
+    font-family: 'Oxygen', sans-serif;
 }
 
-input,
-select {
+input, select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -18,19 +16,110 @@ hr {
 }
 
 header {
-    background-color: #cae3e8;
+    background-color: #FFF0E5;
     min-height: 200px;
     display: flex;
     align-items: center;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 40px;
-    padding-top: 40px;
+}
+.user-info {
+    text-align: right; /* Aligns content to the right */
+    margin-top: 10px; /* Adds space above the container */
 }
 
-.header-first-row {
-    width: 100%;
+.header-greet {
+    margin: 0; /* Removes default margin */
+}
+
+.logout-button {
+    display: inline-block; /* Ensures the button is inline with the text */
+    margin-top: 5px; /* Adds space between the username and button */
+    background: #109ae5;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
     display: flex;
+    flex-direction: column;
+    padding: 0 40px 20px 40px;
+    justify-content: center;
+}
+
+main h2 {
+    font-size: 2em;
+}
+
+.app {
+    min-width: 800px;
+    max-width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.clear { 
+    clear:both; 
+} 
+
+.right { 
+    float: right; 
+} 
+
+.left { 
+    float: left; 
+}
+
+.title {
+    font-size: 3em;
+    padding: 30px 0;
+    margin: auto 0;
+}
+
+.login-form {
+    align-self: center;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: start;
+    padding: 50px 0;
+}
+
+form * {
+    display: block;
+}
+
+form label {
+    font-size: 1em;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+
+input[type=submit], button {
+    border: 0px;
+    width: 100%;
+    background-color: #1557FF;
+    border-radius: 5px;
+    color: white;
+    margin: 8px 0;
+    padding: 12px 20px;
+    font-size: 1em;
+    margin-top: 50px;
+}
+
+.login-form form .errorlist {
+    color: red;
+}
+
+header p {
+    font-weight: bold;
 }
 
 .navbar {
@@ -42,86 +131,96 @@ header {
 .navbar a {
     text-decoration: none;
     padding: 8px 0;
-    color: #259fe1;
+    color: #1557FF;
     margin-right: 15px;
 }
 
-.navbar a:hover,
-.navbar .current-page {
-    border-bottom: solid 4px #1557ff;
+.navbar a:hover, .navbar .current-page {
+    border-bottom: solid 4px #1557FF;
     border-spacing: 0 15px;
     font-weight: bold;
 }
 
-title {
-    font-size: 3em;
-    padding: 0px 50px 0 20px;
-    margin: auto 0;
-    color: #1978ca;
-}
-
-main {
-    padding: 40px;
-}
-
-main h2 {
-    font-size: 2em;
-}
-
-.app {
-    min-width: 800px;
-    max-width: 60%;
-    margin: 0 auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-}
-
 main table {
     text-align: left;
     border-collapse: separate;
     border-spacing: 0 15px;
+    width: 80%;
+}
+
+.header-first-row {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-main table th {
-    text-align: left;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    text-decoration: underline;
+.logout {
+    height: max-content;
+    text-align: center;
+    text-decoration: none;
+    border: 0px;
+    background-color: #1557FF;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    margin: 30px;
+    font-size: 1em;
 }
 
-ul {
-    list-style: none;
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-between;
 }
 
-main {
-    padding: 40px;
+.menu-items * {
+    padding: 0;
 }
 
-main h2 {
-    font-size: 2em;
+.menu-items > li {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid grey;
+    margin: 10px 0;
+    border-radius: 10px;
+    justify-content: left;
+    flex-basis: 45%;
 }
 
-.app {
-    min-width: 800px;
-    max-width: 60%;
-    margin: 0 auto;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+.menu-items, .menu-items ul {
+    list-style-type: none;
 }
 
-main table {
-    text-align: left;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    width: 100%;
+.menu-item-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5em;
 }
 
-main table th {
-    text-align: left;
-    border-collapse: separate;
-    border-spacing: 0 15px;
-    text-decoration: underline;
+.menu-item-title {
+    font-weight: bold;
 }
 
-ul {
-    list-style: none;
+.menu-item-ingredients {
+    padding: 20px 0;
+}
+
+.menu-item-ingredients * {
+    padding: 5px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #1557FF;
+}
+a:hover {
+    font-weight: bold;
+}
+
+main form input[type=submit] {
+    width: max-content;
 }

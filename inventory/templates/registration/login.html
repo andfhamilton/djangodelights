@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'routes/login.css' %}" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
+
+<div class="login-form">
+    <h2>Please login</h2>
+      <form class="login" method="post">
+          <div>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Login"/>
+          </div>
+      </form>
+    </div>
+{% endblock %}

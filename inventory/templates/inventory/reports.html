@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>View Reports</h2>
+    <hr/>
+    <h3>Profit</h3>
+    <div style="color: blue;">Total Profit: ${{ profit|stringformat:".2f" }}</div>
+    <hr/>
+    <h3>Revenue</h3>
+    <div style="color: green;">Total Revenue: ${{ revenue|stringformat:".2f" }}</div>
+    <hr/>
+    <h3>Expenses</h3>    
+    <div style="color: red;">Total Cost: ${{ total_cost|stringformat:".2f" }}</div>
+    
+
+
+{% endblock %}
