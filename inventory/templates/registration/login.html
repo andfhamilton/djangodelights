@@ -1,9 +1,8 @@
 {% extends "base.html" %}
-
+{% block title %}Delights - Login{% endblock %}
 {% block content %}
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'routes/login.css' %}" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet" />
 
@@ -12,7 +11,12 @@
       <form class="login" method="post">
           <div>
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.username.label_tag }}
+            <input type="text" name="{{ form.username.html_name }}" id="{{ form.username.auto_id }}" placeholder="Enter your username" required>
+            
+            {{ form.password.label_tag }}
+            <input type="password" name="{{ form.password.html_name }}" id="{{ form.password.auto_id }}" placeholder="Enter your password" required>
+            
             <input type="submit" value="Login"/>
           </div>
       </form>
